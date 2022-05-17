@@ -1,20 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import './PhotoViewer.css';
 
-function PhotoViewer(props) {
-    if (!props.src) {
-        return (
-            <div>
-                <img className = 'landscape-photo' src = "https://picsum.photos/id/947/1600/900.jpg"></img>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <img className = 'landscape-photo' src = {props.src}></img>
-            </div>
-        );
-    }
+function PhotoViewer({selectedPhoto}) {
+    return (
+        <div>
+            <img className = 'main-photo' src = {selectedPhoto}></img>
+        </div>
+    );
 }
 
 export {PhotoViewer};
