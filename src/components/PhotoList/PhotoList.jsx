@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './PhotoList.css';
 
-function PhotoList({setSelectedPhoto}) {
+function PhotoList({selectedPhoto, setSelectedPhoto}) {
     const brokenImages = [1, 24, 32, 36, 44, 47];
     
     function getImageUrls() {
@@ -20,7 +20,10 @@ function PhotoList({setSelectedPhoto}) {
     return (
         <div>
             <ul className = "photo-list">
-                {imageUrls.map(url => <li className = "list-item"><img onClick = {() => setSelectedPhoto(url)} className = "grid-photo" src = {url}></img></li>)}
+                {imageUrls.map(url => {
+                    const className = (url === selectedPhoto) ? "grid-photo selected-photo" : "grid-photo"
+                    return <li className = "list-item"><img onClick = {() => setSelectedPhoto(url)} className = {className} src = {url}></img></li> 
+                })}
             </ul>
         </div>
     )

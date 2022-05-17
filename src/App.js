@@ -11,7 +11,7 @@ function App() {
         <h1>React Photo Viewer</h1>
         <PhotoViewer selectedPhoto = {selectedPhoto}/>
       </div>
-      <PhotoList setSelectedPhoto = {setSelectedPhoto}/>
+      <PhotoList selectedPhoto = {selectedPhoto} setSelectedPhoto = {setSelectedPhoto}/>
     </div>
   );
 }
